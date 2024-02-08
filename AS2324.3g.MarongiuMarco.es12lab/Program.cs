@@ -35,8 +35,12 @@
                         annoNascita[cont] =int.Parse(Console.ReadLine());
                         Console.WriteLine("inserire email");
                         email[cont] = Console.ReadLine();
-                        Console.WriteLine("inserire simpatia");
-                        simpatia[cont]=int.Parse(Console.ReadLine());
+                        do 
+                        {
+                            Console.WriteLine("inserire simpatia (deve essere compresa tra 1 e 5)");
+                            simpatia[cont] = int.Parse(Console.ReadLine());
+                        }while (simpatia[cont]<1 || simpatia[cont]>5);
+                        cont++;
                         break;
                     case 2:
                         Console.WriteLine("elenco dei nominativi");
@@ -80,7 +84,7 @@
                         }
                         break;
                 }
-                cont++;
+                
             } while (scelta != 9);
         }
     }
