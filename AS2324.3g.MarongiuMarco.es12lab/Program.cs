@@ -41,9 +41,17 @@
                         Console.WriteLine("elenco dei nominativi");
                         for (int i = 0; i < 100; i++)
                         {
-                            Console.WriteLine("persona: "+(i+1);
-                            Console.WriteLine("Nome");
+                            Console.WriteLine("persona: "+(i+1));
+                            Console.WriteLine("Nome: " + nome[i]);
+                            Console.WriteLine("Cognome: " + cognome[i]);
+                            Console.WriteLine("Nickname: " + nickname[i]);
+                            Console.WriteLine("Anno di nascita: " + annoNascita[i]);
+                            Console.WriteLine("Email: " + email[i]);
+                            Console.WriteLine("Simpatia: " + simpatia[i]);
                         }
+                        break;
+                    case 3:
+                        Console.WriteLine("Inserisci un nickname");
 
                 }
                 cont++;
