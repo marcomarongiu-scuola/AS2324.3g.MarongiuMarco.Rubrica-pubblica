@@ -12,6 +12,7 @@
            string[] email = new string[100];
             int scelta;
             int cont = 0;
+            string ricerca;
             do
             {
                 Console.WriteLine("premi 1 per: inserire un nominativo");
@@ -39,7 +40,7 @@
                         break;
                     case 2:
                         Console.WriteLine("elenco dei nominativi");
-                        for (int i = 0; i < 100; i++)
+                        for (int i = 0; i < cont; i++)
                         {
                             Console.WriteLine("persona: "+(i+1));
                             Console.WriteLine("Nome: " + nome[i]);
@@ -52,7 +53,32 @@
                         break;
                     case 3:
                         Console.WriteLine("Inserisci un nickname");
-
+                        ricerca=(Console.ReadLine());
+                        bool verifica=false;
+                        for (int y=0; y < cont; y++)
+                        {
+                            if (ricerca == nickname[y])
+                            {
+                                verifica=true;
+                                Console.WriteLine("Nome: " + nome[y]);
+                                Console.WriteLine("Cognome: " + cognome[y]);
+                                Console.WriteLine("Nickname: " + nickname[y]);
+                                Console.WriteLine("Anno di nascita: " + annoNascita[y]);
+                                Console.WriteLine("Email: " + email[y]);
+                                Console.WriteLine("Simpatia: " + simpatia[y]);
+                            }
+                        }
+                        if (verifica == false)
+                        {
+                            Console.WriteLine("Non sono state trovate persone con il nickname: "+ricerca);
+                        }
+                        break;
+                    default:
+                        if (scelta != 9)
+                        {
+                            Console.WriteLine("valore non accettabile");
+                        }
+                        break;
                 }
                 cont++;
             } while (scelta != 9);
