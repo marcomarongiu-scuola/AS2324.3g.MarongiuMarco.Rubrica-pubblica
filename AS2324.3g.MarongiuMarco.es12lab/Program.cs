@@ -124,7 +124,28 @@
                             Console.WriteLine("Non sono state trovate persone con il cognnome: " + ricerca);
                         }
                         break;
-                    
+                    case 6:
+                        Console.WriteLine("Inserisci la parte iniziale di un cognome");
+                        ricerca = (Console.ReadLine());
+                        bool verifica4 = false;
+                        for (int y = 0; y < cont; y++)
+                        {
+                            if (cognome[y].ToUpper().Contains(ricerca.ToUpper()) == true)
+                            {
+                                verifica = true;
+                                Console.WriteLine("Nome: " + nome[y]);
+                                Console.WriteLine("Cognome: " + cognome[y]);
+                                Console.WriteLine("Nickname: " + nickname[y]);
+                                Console.WriteLine("Anno di nascita: " + annoNascita[y]);
+                                Console.WriteLine("Email: " + email[y]);
+                                Console.WriteLine("Simpatia: " + simpatia[y]);
+                            }
+                        }
+                        if (verifica4 == false)
+                        {
+                            Console.WriteLine("Non sono state trovate persone con il cognnome: " + ricerca);
+                        }
+                        break;
                     default:
                         if (scelta != 9)
                         {
