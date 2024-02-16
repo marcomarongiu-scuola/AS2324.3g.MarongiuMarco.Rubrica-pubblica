@@ -61,7 +61,7 @@
                         bool verifica=false;
                         for (int y=0; y < cont; y++)
                         {
-                            if (ricerca == nickname[y])
+                            if (ricerca == nickname[y] || ricerca == nickname[y].ToUpper() || ricerca == nickname[y].ToLower())
                             {
                                 verifica=true;
                                 Console.WriteLine("Nome: " + nome[y]);
