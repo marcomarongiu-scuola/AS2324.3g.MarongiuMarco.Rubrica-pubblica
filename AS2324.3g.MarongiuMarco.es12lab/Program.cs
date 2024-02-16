@@ -18,6 +18,9 @@
                 Console.WriteLine("premi 1 per: inserire un nominativo");
                 Console.WriteLine("premi 2 per: vedere l'elenco dei nominativi");
                 Console.WriteLine("premi 3 per: ricercare un nominativo in base al nickname");
+                Console.WriteLine("premi 4 per ricercare tutti i nomi in base al nome case insensitive");
+                Console.WriteLine("premi 5 per ricercare tutti i cognomi che iniziano per a prescindere da come è scritto");
+                Console.WriteLine("premi 6 per ricercare tutti i cognomi che contengono il dato ricercato a prescindere da come è scritto\r\n");
                 Console.WriteLine("premi 9 per: uscire");
                 scelta = Convert.ToInt32(Console.ReadLine());
                 switch (scelta)
@@ -61,7 +64,7 @@
                         bool verifica=false;
                         for (int y=0; y < cont; y++)
                         {
-                            if (ricerca == nickname[y] || ricerca == nickname[y].ToUpper() || ricerca == nickname[y].ToLower())
+                            if (ricerca == nickname[y])
                             {
                                 verifica=true;
                                 Console.WriteLine("Nome: " + nome[y]);
@@ -77,6 +80,51 @@
                             Console.WriteLine("Non sono state trovate persone con il nickname: "+ricerca);
                         }
                         break;
+                    case 4:
+                        Console.WriteLine("Inserisci un nome");
+                        ricerca = (Console.ReadLine());
+                        bool verifica2 = false;
+                        for (int y = 0; y < cont; y++)
+                        {
+                            if (ricerca.ToUpper() == nome[y].ToUpper())
+                            {
+                                verifica = true;
+                                Console.WriteLine("Nome: " + nome[y]);
+                                Console.WriteLine("Cognome: " + cognome[y]);
+                                Console.WriteLine("Nickname: " + nickname[y]);
+                                Console.WriteLine("Anno di nascita: " + annoNascita[y]);
+                                Console.WriteLine("Email: " + email[y]);
+                                Console.WriteLine("Simpatia: " + simpatia[y]);
+                            }
+                        }
+                        if (verifica2 == false)
+                        {
+                            Console.WriteLine("Non sono state trovate persone con il nome: " + ricerca);
+                        }
+                        break;
+                    case 5:
+                        Console.WriteLine("Inserisci la parte iniziale di un cognome");
+                        ricerca = (Console.ReadLine());
+                        bool verifica3 = false;
+                        for (int y = 0; y < cont; y++)
+                        {
+                            if (cognome[y].ToUpper().StartsWith(ricerca.ToUpper()) == true)
+                            {
+                                verifica = true;
+                                Console.WriteLine("Nome: " + nome[y]);
+                                Console.WriteLine("Cognome: " + cognome[y]);
+                                Console.WriteLine("Nickname: " + nickname[y]);
+                                Console.WriteLine("Anno di nascita: " + annoNascita[y]);
+                                Console.WriteLine("Email: " + email[y]);
+                                Console.WriteLine("Simpatia: " + simpatia[y]);
+                            }
+                        }
+                        if (verifica3 == false)
+                        {
+                            Console.WriteLine("Non sono state trovate persone con il cognnome: " + ricerca);
+                        }
+                        break;
+                    
                     default:
                         if (scelta != 9)
                         {
